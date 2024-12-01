@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oriza - Organisation Humanitaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        nav .logo img {
+            max-width: 90px;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #81c784;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .menu a {
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav .menu a:hover {
+            color: #81c784;
+        }
+
+        nav .burger {
+            display: none;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #2e7d32, #81c784);
+            color: #fff;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        header .btn {
+            padding: 15px 30px;
+            background: #fff;
+            color: #2e7d32;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        header .btn:hover {
+            background: #81c784;
+            color: #fff;
+        }
+
+        /* About Section */
+        #about {
+            padding: 80px 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 80px 20px;
+            background: #81c784;
+            color: #fff;
+            text-align: center;
+        }
+
+        #projects h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .project {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .project .card {
+            background: #fff;
+            color: #333;
+            border-radius: 15px;
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 80px 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 15px;
+        }
+
+        #contact input, #contact textarea {
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        #contact button {
+            padding: 15px;
+            background: #81c784;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background: #2e7d32;
+        }
+
+        /* Footer */
+        footer {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+            }
+
+            nav .burger {
+                display: block;
+                font-size: 1.5em;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            header h1 {
+                font-size: 3em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="af.png" alt="Oriza Logo">
+        </div>
+        <div class="menu">
+            <a href="#about">À propos</a>
+            <a href="#projects">Projets</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="burger"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <h1>Oriza</h1>
+        <p>Ensemble pour un avenir connecté. Notre mission est d'apporter la paix et l'aide humanitaire à ceux qui en ont besoin.</p>
+        <a href="#about" class="btn">Découvrir plus</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>À propos de nous</h2>
+        <p>Oriza est une organisation humanitaire qui se consacre à fournir de l'aide aux personnes touchées par les conflits tout en sensibilisant au besoin de paix mondiale.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Nos Projets</h2>
+        <div class="project">
+            <div class="card">
+                <img src="images.png" alt="Projet 1 Image">
+                <h3>Campagnes pour la paix</h3>
+                <p>Promouvoir la paix et sensibiliser à travers des campagnes éducatives et engageantes.</p>
+            </div>
+            <div class="card">
+                <img src="images2.jpg" alt="Projet 2 Image">
+                <h3>Projet 2</h3>
+                <p>Fournir des ressources essentielles comme la nourriture, le logement et les soins de santé.</p>
+            </div>
+            <div class="card">
+                <img src="Makulski.jpg" alt="Projet 3 Image">
+                <h3>Reconstruction post-conflit</h3>
+                <p>Aider à reconstruire les communautés et les vies touchées par les conflits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contactez-Nous</h2>
+        <form>
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Oriza. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Burger Menu Toggle
+        const burger = document.querySelector('.burger');
+        const menu = document.querySelector('.menu');
+
+        burger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
